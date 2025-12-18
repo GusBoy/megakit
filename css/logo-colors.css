@@ -1,0 +1,293 @@
+/* ===========================================
+   ????? ???????? ? ?????????
+   ?????????: #c97234 | ?????-?????: #0d4a6d
+   =========================================== */
+
+/* ===========================================
+   ??????? ? NAVBAR
+   =========================================== */
+
+/* ??????? - ?????? ????????? */
+.navbar-brand span,
+.logo span {
+  color: #c97234 !important;
+}
+
+/* ???????? ?????? ? ????????? - ????????? */
+#navbar .nav-link:hover,
+#navbar .nav-link:focus,
+#navbar .active .nav-link {
+  color: #c97234 !important;
+}
+
+/* Dropdown ??? hover */
+.dropdown-submenu.active > .dropdown-toggle,
+.dropdown-submenu:hover > .dropdown-item,
+.dropdown-item.active,
+.dropdown-item:hover {
+  background: #c97234 !important;
+  color: #fff;
+}
+
+/* Header top social icons hover */
+.header-top .header-top-socials a:hover {
+  color: #c97234 !important;
+}
+
+/* ===========================================
+   ??????
+   =========================================== */
+
+/* ???????? ?????? - ?????-????? */
+.btn-main, .btn-small, .btn-transparent {
+  background: #0d4a6d !important;
+  color: #fff;
+  transition: all 0.2s ease;
+}
+
+.btn-main:hover, .btn-small:hover {
+  background: #1e6a94 !important;
+  color: #fff;
+}
+
+/* ?????? ? ???????? */
+.btn-solid-border {
+  border: 2px solid #0d4a6d !important;
+  background: transparent;
+  color: #242424;
+}
+
+.btn-solid-border:hover {
+  border: 2px solid #0d4a6d !important;
+  background: #0d4a6d !important;
+  color: #fff !important;
+}
+
+/* ===========================================
+   ?????? ? BACKGROUNDS
+   =========================================== */
+
+/* ???????? */
+.subtitle {
+  color: #c97234 !important;
+}
+
+/* Text colors */
+.text-color,
+.text-color2 {
+  color: #c97234 !important;
+}
+
+/* Section titles */
+.section-title .subtitle {
+  color: #c97234 !important;
+}
+
+/* Background colors */
+.bg-primary {
+  background: #c97234 !important;
+}
+
+.bg-primary-dark {
+  background: #0d4a6d !important;
+}
+
+.bg-primary-darker {
+  background: #094060 !important;
+}
+
+/* ===========================================
+   ????????? ??? ?????-?????
+   =========================================== */
+
+/* ????????? - ?????-????? ?????? ??????? */
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  color: #0d4a6d !important;
+}
+
+/* ???????? ????? ???????? ?????-????? ??? ?????????? */
+body {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+/* ===========================================
+   HOVER ??????? ? ?????????
+   =========================================== */
+
+/* ?????? */
+a:focus, a:hover {
+  color: #c97234 !important;
+}
+
+/* ???????? ????? */
+.service-item:hover {
+  box-shadow: 0 20px 50px rgba(201, 114, 52, 0.15) !important;
+}
+
+/* Intro items */
+.intro-item:hover {
+  box-shadow: 0 15px 40px rgba(201, 114, 52, 0.1) !important;
+}
+
+/* Team cards */
+.team-img-hover .team-social li a:hover {
+  background: #c97234 !important;
+  border-color: #c97234 !important;
+}
+
+/* Blog items */
+.blog-item:hover {
+  box-shadow: 0 10px 30px rgba(201, 114, 52, 0.1) !important;
+}
+
+.blog-item-content h3 a:hover {
+  color: #c97234 !important;
+}
+
+/* Testimonials */
+.testimonial-item:hover {
+  box-shadow: 0 15px 40px rgba(201, 114, 52, 0.1) !important;
+}
+
+/* Comment wrap */
+.comment-wrap:hover {
+  box-shadow: 0 5px 20px rgba(201, 114, 52, 0.1) !important;
+}
+
+/* ===========================================
+   ???????? ? TRANSITIONS
+   =========================================== */
+
+/* ?????? ? ????????? */
+.btn::before {
+  background: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* ===========================================
+   ?????????
+   =========================================== */
+
+.bg-gradient {
+  background-image: linear-gradient(145deg, rgba(13, 74, 109, 0.95) 0%, rgba(201, 114, 52, 0.95) 100%) !important;
+  background-repeat: repeat-x !important;
+}
+
+/* ===========================================
+   ????? ???????
+   =========================================== */
+
+@media (max-width: 992px) {
+  /* ????????? ???? */
+  .navbar-collapse {
+    border-top: 1px solid rgba(201, 114, 52, 0.2) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* ????????? ??? ????????? */
+  .btn-main:hover,
+  .btn-solid-border:hover {
+    transform: translateY(-2px) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* ????????? ??? ????????? */
+  .scroll-to-top {
+    box-shadow: 0 3px 15px rgba(201, 114, 52, 0.4) !important;
+  }
+}
+
+/* ===========================================
+   ?????? OVERRIDE
+   =========================================== */
+
+/* ???????? ??? ???? ????? ??????????? */
+.color-one {
+  color: #c97234 !important;
+}
+
+/* Pricing hover */
+.pricing .btn-solid-border:hover {
+  border-color: #c97234 !important;
+  background: #c97234 !important;
+}
+
+/* Contact info hover */
+.contact-info p:hover {
+  color: #c97234 !important;
+}
+
+/* Header top email hover */
+.header-top .header-top-info a:hover,
+.header-top .header-top-info a:hover span {
+  color: #c97234 !important;
+}
+
+/* Widget tags hover */
+.widget.widget-tag ul li a:hover {
+  color: #fff !important;
+  background: #c97234 !important;
+  border: 1px solid #c97234 !important;
+}
+
+/* Post comments */
+.post-comments .comment-author a {
+  color: #c97234 !important;
+}
+
+.post-comments .comment-button {
+  color: #c97234 !important;
+}
+
+.post-comments .comment-button:hover {
+  color: #0d4a6d !important;
+}
+
+/* Quote */
+h3.quote::before {
+  background: #c97234 !important;
+}
+
+/* Form focus */
+input[type=email]:focus, 
+input[type=password]:focus, 
+input[type=text]:focus, 
+input[type=tel]:focus,
+.form-control:focus {
+  border: 1px solid #c97234 !important;
+}
+
+.comment-reply-form input:focus, 
+.comment-reply-form textarea:focus {
+  border: 1px solid #c97234 !important;
+}
+
+/* Social profile hover */
+.social-profile ul li a i:hover {
+  color: #c97234 !important;
+}
+
+/* Next-prev navigation */
+.next-prev a:hover {
+  color: #c97234 !important;
+}
+
+/* Post excerpt blockquote */
+.post-excerpt blockquote.quote-post p {
+  color: #c97234 !important;
+}
+
+/* Widget category hover */
+.widget.widget-category ul li a:hover {
+  color: #c97234 !important;
+}
+
+/* Portfolio overlay */
+.portflio-item .overlay-item {
+  color: #c97234 !important;
+}
+
+/* ===========================================
+   ????? ?????
+   =========================================== */
