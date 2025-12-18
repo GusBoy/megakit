@@ -20,13 +20,22 @@
   color: #c97234 !important;
 }
 
+/* Dropdown ???? */
+.dropdown-menu {
+  background: #fff !important;
+}
+
+.dropdown-item {
+  color: #242424 !important;
+}
+
 /* Dropdown ??? hover */
 .dropdown-submenu.active > .dropdown-toggle,
 .dropdown-submenu:hover > .dropdown-item,
 .dropdown-item.active,
 .dropdown-item:hover {
   background: #c97234 !important;
-  color: #fff;
+  color: #fff !important;
 }
 
 /* Header top social icons hover */
@@ -180,6 +189,31 @@ a:focus, a:hover {
   /* ????????? ???? */
   .navbar-collapse {
     border-top: 1px solid rgba(201, 114, 52, 0.2) !important;
+    background: #222328 !important;
+    padding: 20px !important;
+  }
+  
+  /* ????? ? ????????? ???? ?????? ???? ????? */
+  .navbar-collapse .nav-link {
+    color: #fff !important;
+  }
+  
+  .navbar-collapse .nav-link:hover {
+    color: #c97234 !important;
+  }
+  
+  /* Dropdown ? ????????? ???? */
+  .navbar-collapse .dropdown-menu {
+    background: rgba(255, 255, 255, 0.95) !important;
+  }
+  
+  .navbar-collapse .dropdown-item {
+    color: #242424 !important;
+  }
+  
+  .navbar-collapse .dropdown-item:hover {
+    background: #c97234 !important;
+    color: #fff !important;
   }
 }
 
