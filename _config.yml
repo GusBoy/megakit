@@ -1,0 +1,15 @@
+# Jekyll configuration for GitHub Pages
+theme: jekyll-theme-minimal
+plugins:
+  - jekyll-relative-links
+
+# Exclude files from processing
+exclude:
+  - build/
+  - includes/
+  - node_modules/
+  - start-server.bat
+  - start-server.ps1
+  - build-for-github-pages.ps1
+  - README.md
+  - GITHUB_PAGES_DEPLOY.md
