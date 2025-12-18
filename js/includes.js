@@ -143,9 +143,6 @@ const footerHTML = `
 
       <div class="col-lg-3 col-sm-6">
         <div class="widget">
-          <div class="logo mb-4">
-            <img src="images/logo.png" alt="Mandril" style="max-height: 40px; filter: brightness(0) invert(1);">
-          </div>
           <h6><a href="mailto:info@mandril.md">info@mandril.md</a></h6>
           <a href="mailto:info@mandril.md"><span class="text-color h4">Contact Us</span></a>
         </div>
