@@ -130,6 +130,22 @@
 }
 
 /* ========================================
+   LANGUAGE CHANGE ANIMATION
+   ======================================== */
+
+.lang-fade-out {
+    opacity: 0 !important;
+    transform: translateY(-15px) !important;
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.lang-fade-in {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* ========================================
    ANIMATION DELAYS
    ======================================== */
 

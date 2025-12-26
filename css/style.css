@@ -299,9 +299,16 @@ a:focus {
 }
 .page-title .block h1 {
   color: #fff;
+  animation: fadeInUp 1s ease 0.2s backwards;
 }
 .page-title .block p {
   color: #fff;
+}
+.page-title .block span {
+  animation: fadeInUp 1s ease 0.1s backwards;
+}
+.page-title .block ul {
+  animation: fadeInUp 1s ease 0.3s backwards;
 }
 
 .page-wrapper {
@@ -580,6 +587,7 @@ ul.dropdown-menu li {
   line-height: 80px;
   font-weight: 600;
   color: #fff;
+  animation: fadeInUp 1s ease 0.2s backwards;
 }
 .slider .block p {
   margin-bottom: 30px;
@@ -590,6 +598,10 @@ ul.dropdown-menu li {
 }
 .slider .block span {
   letter-spacing: 1px;
+  animation: fadeInUp 1s ease 0.1s backwards;
+}
+.slider .block .btn {
+  animation: fadeInUp 1s ease 0.3s backwards;
 }
 
 .intro-item i {

@@ -302,7 +302,7 @@ const translations = {
 };
 
 // Language switching function
-function changeLanguage(lang) {
+function changeLanguage(lang, animate = true) {
     console.log('🌍 Switching language to:', lang);
 
     // Save selected language to localStorage
@@ -323,24 +323,38 @@ function changeLanguage(lang) {
     document.querySelectorAll('[data-lang]').forEach(element => {
         const key = element.getAttribute('data-lang');
         if (translations[lang][key]) {
-            // Use textContent for most elements
-            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-                element.placeholder = translations[lang][key];
-            } else if (element.tagName === 'BUTTON' || element.tagName === 'A') {
-                // For buttons and links, update text but preserve child elements
-                const childNodes = Array.from(element.childNodes);
-                const hasOnlyText = childNodes.every(node => node.nodeType === Node.TEXT_NODE || node.nodeName === 'I');
-                if (hasOnlyText) {
-                    // Preserve icons
-                    const icons = element.querySelectorAll('i');
-                    element.textContent = translations[lang][key];
-                    icons.forEach(icon => element.appendChild(icon));
+            // Add fade-out animation only if animate is true
+            if (animate) {
+                element.classList.add('lang-fade-out');
+                element.classList.remove('lang-fade-in');
+            }
+
+            setTimeout(() => {
+                // Use textContent for most elements
+                if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                    element.placeholder = translations[lang][key];
+                } else if (element.tagName === 'BUTTON' || element.tagName === 'A') {
+                    // For buttons and links, update text but preserve child elements
+                    const childNodes = Array.from(element.childNodes);
+                    const hasOnlyText = childNodes.every(node => node.nodeType === Node.TEXT_NODE || node.nodeName === 'I');
+                    if (hasOnlyText) {
+                        // Preserve icons
+                        const icons = element.querySelectorAll('i');
+                        element.textContent = translations[lang][key];
+                        icons.forEach(icon => element.appendChild(icon));
+                    } else {
+                        element.textContent = translations[lang][key];
+                    }
                 } else {
                     element.textContent = translations[lang][key];
                 }
-            } else {
-                element.textContent = translations[lang][key];
-            }
+
+                // Add fade-in animation only if animate is true
+                if (animate) {
+                    element.classList.remove('lang-fade-out');
+                    element.classList.add('lang-fade-in');
+                }
+            }, animate ? 500 : 0);
         }
     });
 
@@ -405,8 +419,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Load saved language or default to English
     const savedLang = localStorage.getItem('preferredLanguage') || 'en';
 
-    // Apply language immediately - no delay needed
-    changeLanguage(savedLang);
+    // Apply language immediately - no animation on initial load
+    changeLanguage(savedLang, false);
 
     console.log('✅ Language loaded:', savedLang);
 });
