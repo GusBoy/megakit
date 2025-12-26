@@ -622,6 +622,11 @@ ul.dropdown-menu li {
   min-height: 650px;
   background: url("../images/about/home-8.jpg") no-repeat;
   background-size: cover;
+  transition: all 1.2s ease;
+}
+
+.bg-about:hover {
+  transform: scale(1.08);
 }
 
 .about-content {

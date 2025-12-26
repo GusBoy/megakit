@@ -3,7 +3,10 @@
     "allow": [
       "Bash(grep:*)",
       "Bash(python3:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(ls:*)",
+      "Bash(open -a \"Google Chrome\" index.html)",
+      "Bash(open:*)"
     ]
   }
 }

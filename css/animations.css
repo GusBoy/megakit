@@ -93,16 +93,32 @@
     animation: fadeInUp 0.8s ease-out forwards;
 }
 
+.fade-in-up.animated {
+    transform: none !important;
+}
+
 .slide-in-left {
     animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.slide-in-left.animated {
+    transform: none !important;
 }
 
 .slide-in-right {
     animation: slideInRight 0.8s ease-out forwards;
 }
 
+.slide-in-right.animated {
+    transform: none !important;
+}
+
 .scale-in {
     animation: scaleIn 0.6s ease-out forwards;
+}
+
+.scale-in.animated {
+    transform: none !important;
 }
 
 .pulse-animation {
