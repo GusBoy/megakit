@@ -23,18 +23,26 @@ const headerHTML = `
             <div class="collapse navbar-collapse text-center" id="navbarsExample09">
               <ul class="navbar-nav ml-auto">
                 <li class="nav-item" data-page="index">
-                  <a class="nav-link" href="index.html">HOME</a>
+                  <a class="nav-link" href="index.html" data-lang="nav.home">HOME</a>
                 </li>
                 <li class="nav-item" data-page="about">
-                  <a class="nav-link" href="about.html">ABOUT</a>
+                  <a class="nav-link" href="about.html" data-lang="nav.about">ABOUT</a>
                 </li>
                 <li class="nav-item" data-page="service">
-                  <a class="nav-link" href="service.html">SERVICES</a>
+                  <a class="nav-link" href="service.html" data-lang="nav.services">SERVICES</a>
                 </li>
                 <li class="nav-item" data-page="contact">
-                  <a class="nav-link" href="contact.html">CONTACT</a>
+                  <a class="nav-link" href="contact.html" data-lang="nav.contact">CONTACT</a>
                 </li>
               </ul>
+              <div class="language-switcher">
+                <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')" aria-label="English">
+                  EN
+                </button>
+                <button class="lang-btn" data-lang="ro" onclick="changeLanguage('ro')" aria-label="Romanian">
+                  RO
+                </button>
+              </div>
             </div>
           </nav>
         </div>
@@ -51,44 +59,44 @@ const footerHTML = `
     <div class="row">
       <div class="col-lg-4 col-md-6 col-sm-6">
         <div class="widget">
-          <h4 class="text-capitalize mb-4">About Mandril</h4>
-          <p class="mb-4">We provide professional services for import and export operations across industrial and agricultural sectors.</p>
-          
-          <h6 class="mb-3"><i class="fas fa-map-marker-alt mr-2"></i>Our Location</h6>
+          <h4 class="text-capitalize mb-4" data-lang="footer.about.title">About Mandril</h4>
+          <p class="mb-4" data-lang="footer.about.text">We provide professional services for import and export operations across industrial and agricultural sectors.</p>
+
+          <h6 class="mb-3"><i class="fas fa-map-marker-alt mr-2"></i><span data-lang="footer.location">Our Location</span></h6>
           <p class="mb-2">Office 2602, Swiss Tower<br>Chisinau, Moldova</p>
         </div>
       </div>
 
       <div class="col-lg-2 col-md-6 col-sm-6">
         <div class="widget">
-          <h4 class="text-capitalize mb-4">Quick Links</h4>
+          <h4 class="text-capitalize mb-4" data-lang="footer.quicklinks">Quick Links</h4>
 
           <ul class="list-unstyled footer-menu lh-35">
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="service.html">Services</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html" data-lang="footer.link.about">About Us</a></li>
+            <li><a href="service.html" data-lang="footer.link.services">Services</a></li>
+            <li><a href="contact.html" data-lang="footer.link.contact">Contact</a></li>
           </ul>
         </div>
       </div>
 
       <div class="col-lg-2 col-md-6 col-sm-6">
         <div class="widget">
-          <h4 class="text-capitalize mb-4">Company</h4>
+          <h4 class="text-capitalize mb-4" data-lang="footer.company">Company</h4>
 
           <ul class="list-unstyled footer-menu lh-35">
-            <li><a href="about.html">Careers</a></li>
-            <li><a href="about.html">Legal</a></li>
-            <li><a href="about.html">Privacy Policy</a></li>
-            <li><a href="about.html">Terms of Use</a></li>
-            <li><a href="contact.html">Support</a></li>
+            <li><a href="about.html" data-lang="footer.link.careers">Careers</a></li>
+            <li><a href="about.html" data-lang="footer.link.legal">Legal</a></li>
+            <li><a href="about.html" data-lang="footer.link.privacy">Privacy Policy</a></li>
+            <li><a href="about.html" data-lang="footer.link.terms">Terms of Use</a></li>
+            <li><a href="contact.html" data-lang="footer.link.support">Support</a></li>
           </ul>
         </div>
       </div>
 
       <div class="col-lg-4 col-md-6 col-sm-6">
         <div class="widget">
-          <h4 class="text-capitalize mb-4">Contact Information</h4>
-          
+          <h4 class="text-capitalize mb-4" data-lang="footer.contact.title">Contact Information</h4>
+
           <ul class="list-unstyled footer-menu lh-35">
             <li>
               <i class="fas fa-envelope mr-2"></i>
@@ -100,7 +108,7 @@ const footerHTML = `
             </li>
           </ul>
 
-          <h6 class="text-capitalize mt-4 mb-3">Follow Us</h6>
+          <h6 class="text-capitalize mt-4 mb-3" data-lang="footer.follow">Follow Us</h6>
           <ul class="list-inline footer-socials">
             <li class="list-inline-item"><a href="https://www.facebook.com/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
             <li class="list-inline-item"><a href="https://twitter.com/" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
@@ -114,7 +122,7 @@ const footerHTML = `
       <div class="row align-items-center">
         <div class="col-lg-6">
           <div class="copyright">
-            © 2024 Mandril. All Rights Reserved.
+            ï¿½ 2024 Mandril. All Rights Reserved.
           </div>
         </div>
         <div class="col-lg-6 text-left text-lg-right">

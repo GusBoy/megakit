@@ -39,7 +39,8 @@
   <link rel="stylesheet" href="css/logo-colors.css">
   <link rel="stylesheet" href="css/section-colors.css">
   <link rel="stylesheet" href="css/sticky-nav.css">
-  
+  <link rel="stylesheet" href="css/animations.css">
+
   <!--Favicon-->
   <link rel="icon" href="images/favicon.png" type="image/x-icon">
 
@@ -55,12 +56,12 @@
     <div class="row">
       <div class="col-md-12">
         <div class="block text-center">
-          <span class="text-white">About Mandril</span>
-          <h1 class="text-capitalize mb-4 text-lg">Our Company</h1>
+          <span class="text-white" data-lang="page.about.title">About Mandril</span>
+          <h1 class="text-capitalize mb-4 text-lg" data-lang="page.about.subtitle">Our Company</h1>
           <ul class="list-inline">
-            <li class="list-inline-item"><a href="index.html" class="text-white">Home</a></li>
+            <li class="list-inline-item"><a href="index.html" class="text-white" data-lang="page.about.breadcrumb.home">Home</a></li>
             <li class="list-inline-item"><span class="text-white">/</span></li>
-            <li class="list-inline-item text-white-50">About Us</li>
+            <li class="list-inline-item text-white-50" data-lang="page.about.breadcrumb">About Us</li>
           </ul>
         </div>
       </div>
@@ -73,16 +74,16 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-6">
-				<div class="about-item pr-3 mb-5 mb-lg-0">
-					<span class="h6 text-color">Who we are</span>
-					<h2 class="mt-3 mb-4 position-relative content-title">Шnternational trading company</h2>
-					<p class="mb-5">Mandril S.R.L. is a professional trading company specializing in import and export operations in industrial and agricultural sectors. We connect businesses across international markets with quality products and comprehensive support services.</p>
+				<div class="about-item pr-3 mb-5 mb-lg-0 animate-on-scroll fade-in-up">
+					<span class="h6 text-color" data-lang="about.page.who">Who we are</span>
+					<h2 class="mt-3 mb-4 position-relative content-title" data-lang="about.page.title">International trading company</h2>
+					<p class="mb-5" data-lang="about.page.text">Mandril S.R.L. is a professional trading company specializing in import and export operations in industrial and agricultural sectors. We connect businesses across international markets with quality products and comprehensive support services.</p>
 
-					<a href="contact.html" class="btn btn-main btn-round-full">Contact us</a>
+					<a href="contact.html" class="btn btn-main btn-round-full" data-lang="about.page.button">Contact us</a>
 				</div>
 			</div>
 			<div class="col-lg-6">
-				<div class="about-item-img">
+				<div class="about-item-img animate-on-scroll slide-in-right">
 					<img loading="lazy" src="images/about/home-7.jpg" alt="about-image" class="img-fluid">
 				</div>
 			</div>
@@ -96,22 +97,22 @@
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-lg-4 col-md-6 col-sm-6">
-				<div class="about-info-item mb-4 mb-lg-0">
-					<h3 class="mb-3"><span class="text-color mr-2 text-md">01.</span>Our Mission</h3>
-					<p>To provide professional trading solutions that connect businesses across borders, delivering quality products and exceptional service in the industrial and agricultural sectors.</p>
-				</div>		
+				<div class="about-info-item mb-4 mb-lg-0 animate-on-scroll fade-in-up delay-100">
+					<h3 class="mb-3"><span class="text-color mr-2 text-md">01.</span><span data-lang="about.mission.title">Our Mission</span></h3>
+					<p data-lang="about.mission.text">To provide professional trading solutions that connect businesses across borders, delivering quality products and exceptional service in the industrial and agricultural sectors.</p>
+				</div>
 			</div>
 			<div class="col-lg-4 col-md-6 col-sm-6">
-				<div class="about-info-item mb-4 mb-lg-0">
-					<h3 class="mb-3"><span class="text-color mr-2 text-md">02.</span>Vision</h3>
-					<p>To become the leading trading partner for businesses seeking reliable import-export solutions, recognized for our integrity, expertise, and customer-focused approach.</p>
-				</div>		
+				<div class="about-info-item mb-4 mb-lg-0 animate-on-scroll fade-in-up delay-200">
+					<h3 class="mb-3"><span class="text-color mr-2 text-md">02.</span><span data-lang="about.vision.title">Vision</span></h3>
+					<p data-lang="about.vision.text">To become the leading trading partner for businesses seeking reliable import-export solutions, recognized for our integrity, expertise, and customer-focused approach.</p>
+				</div>
 			</div>
 			<div class="col-lg-4 col-md-6 col-sm-6">
-				<div class="about-info-item mb-4 mb-lg-0">
-					<h3 class="mb-3"><span class="text-color mr-2 text-md">03.</span>Our Approach</h3>
-					<p>We combine market knowledge, strong partnerships, and professional logistics to deliver customized solutions that meet each client's specific needs and requirements.</p>
-				</div>		
+				<div class="about-info-item mb-4 mb-lg-0 animate-on-scroll fade-in-up delay-300">
+					<h3 class="mb-3"><span class="text-color mr-2 text-md">03.</span><span data-lang="about.approach.title">Our Approach</span></h3>
+					<p data-lang="about.approach.text">We combine market knowledge, strong partnerships, and professional logistics to deliver customized solutions that meet each client's specific needs and requirements.</p>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -129,6 +130,8 @@ Essential Scripts
 <script src="plugins/jquery/jquery.min.js"></script>
 <!-- Load Header/Footer -->
 <script src="js/includes.js"></script>
+<!-- Language System -->
+<script src="js/language.js"></script>
 <!-- Bootstrap 4.3.1 -->
 <script src="plugins/bootstrap/bootstrap.min.js"></script>
 <!--  Magnific Popup-->

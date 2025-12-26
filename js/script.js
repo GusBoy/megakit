@@ -102,4 +102,29 @@
 		});
 	}
 
+	// Scroll-triggered animations
+	function checkScrollAnimations() {
+		const elements = document.querySelectorAll('.animate-on-scroll');
+		const windowHeight = window.innerHeight;
+
+		elements.forEach(element => {
+			const elementTop = element.getBoundingClientRect().top;
+			const elementVisible = 150; // Trigger point before element comes into view
+
+			if (elementTop < windowHeight - elementVisible) {
+				element.classList.add('animated');
+			}
+		});
+	}
+
+	// Run on scroll
+	$(window).on('scroll', function() {
+		checkScrollAnimations();
+	});
+
+	// Run on page load
+	$(document).ready(function() {
+		checkScrollAnimations();
+	});
+
 })(jQuery);
