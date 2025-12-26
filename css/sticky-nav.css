@@ -1,22 +1,23 @@
 /* ========================================
-   STICKY NAVIGATION
+   STICKY NAVIGATION - WHITE BACKGROUND STYLE
    ======================================== */
 
-/* Sticky ????????? ??? ??????? */
+/* Base navigation - always fixed with white background */
 .navigation {
-    transition: all 0.3s ease !important;
-}
-
-.navigation.sticky-header {
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
     right: 0 !important;
     width: 100% !important;
     z-index: 1000 !important;
-    background: rgba(13, 74, 109, 0.95) !important;
+    background: #ffffff !important;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
-    backdrop-filter: blur(10px) !important;
+    transition: all 0.3s ease !important;
+}
+
+.navigation.sticky-header {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
+    background: rgba(255, 255, 255, 0.98) !important;
     animation: slideDown 0.3s ease !important;
 }
 
@@ -31,73 +32,152 @@
     }
 }
 
-/* ???? ????????? ??? sticky */
-.navigation.sticky-header #navbar {
+/* Navbar background */
+#navbar {
     background: transparent !important;
 }
 
-.navigation.sticky-header .navbar-brand {
-    color: #ffffff !important;
+/* Navigation links - dark blue color */
+#navbar .nav-link {
+    color: #0d4a6d !important;
+    font-weight: 600 !important;
+    position: relative;
+    transition: color 0.3s ease;
+    padding-bottom: 10px !important;
 }
 
-.navigation.sticky-header .navbar-brand span {
+#navbar .nav-link:hover,
+#navbar .nav-link:focus {
     color: #c97234 !important;
 }
 
-.navigation.sticky-header #navbar .nav-link {
-    color: #ffffff !important;
-}
-
-.navigation.sticky-header #navbar .nav-link:hover,
-.navigation.sticky-header #navbar .nav-link:focus,
-.navigation.sticky-header #navbar .active .nav-link {
+/* Active menu item - orange color */
+#navbar .nav-item.active .nav-link {
     color: #c97234 !important;
 }
 
-/* ?????? ? sticky ????????? */
-.navigation.sticky-header .btn-main {
+/* Underline for active and hover items */
+#navbar .nav-link::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 50% !important;
+    width: 0 !important;
+    height: 2px !important;
+    background: #c97234 !important;
+    transition: all 0.3s ease !important;
+    transform: translateX(-50%) !important;
+}
+
+#navbar .nav-item.active .nav-link::after,
+#navbar .nav-link:hover::after {
+    width: 80% !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+}
+
+/* Buttons in navigation */
+.navigation .btn-main {
     background: #c97234 !important;
     border-color: #c97234 !important;
 }
 
-.navigation.sticky-header .btn-main:hover {
+.navigation .btn-main:hover {
     background: #d08345 !important;
     border-color: #d08345 !important;
 }
 
-/* ========================================
-   HEADER TOP - ?????????? ??? sticky
-   ======================================== */
-.header-top {
-    transition: all 0.3s ease !important;
+/* Hamburger menu button */
+.navbar-toggler {
+    color: #0d4a6d !important;
+    border-color: rgba(13, 74, 109, 0.3) !important;
 }
 
-.navigation.sticky-header ~ .header-top,
-.sticky-header .header-top {
-    max-height: 0 !important;
-    overflow: hidden !important;
-    padding: 0 !important;
-    opacity: 0 !important;
+.navbar-toggler .fa-bars {
+    color: #0d4a6d !important;
 }
 
 /* ========================================
-   ????????????
+   RESPONSIVE - MOBILE MENU
    ======================================== */
 
 @media (max-width: 992px) {
-    .navigation.sticky-header {
-        background: rgba(13, 74, 109, 0.98) !important;
+    .navbar-collapse {
+        background: #ffffff !important;
+        padding: 20px;
+        border-top: 1px solid rgba(13, 74, 109, 0.1);
+        margin-top: 10px;
+    }
+
+    #navbar .nav-link {
+        padding: 10px 0 !important;
+        border-bottom: 1px solid rgba(13, 74, 109, 0.05);
+    }
+
+    #navbar .nav-link:last-child {
+        border-bottom: none;
     }
 }
 
 @media (max-width: 768px) {
-    .navigation.sticky-header {
+    .navigation {
         padding: 10px 0 !important;
     }
 }
 
+/* Body padding for fixed navigation */
+body {
+    padding-top: 80px;
+}
+
+.slider {
+    margin-top: 0 !important;
+}
+
 /* ========================================
-   LANGUAGE SWITCHER
+   LOGO STYLES - MANDRIL LOGO
+   ======================================== */
+
+/* Logo in navbar - colored and sized */
+.navbar-brand .logo-img {
+    height: 55px !important;
+    width: auto !important;
+    max-width: 280px !important;
+    display: block !important;
+    transition: all 0.3s ease;
+    filter: none !important;
+    -webkit-filter: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.navbar-brand {
+    display: inline-block !important;
+    padding: 0 !important;
+}
+
+.navbar-brand:hover .logo-img {
+    transform: scale(1.05);
+    opacity: 1 !important;
+}
+
+/* Responsive logo sizes */
+@media (max-width: 768px) {
+    .navbar-brand .logo-img {
+        height: 45px !important;
+        max-width: 240px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-brand .logo-img {
+        height: 38px !important;
+        max-width: 200px;
+    }
+}
+
+/* ========================================
+   LANGUAGE SWITCHER - BEAUTIFUL EFFECTS
    ======================================== */
 
 .language-switcher {
@@ -108,29 +188,38 @@
 }
 
 .lang-btn {
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    color: #fff;
-    padding: 6px 14px;
-    border-radius: 4px;
+    background-color: transparent !important;
+    color: #0d4a6d !important;
+    border: 1px solid rgba(13, 74, 109, 0.3) !important;
+    padding: 6px 16px !important;
     cursor: pointer;
-    font-size: 13px;
-    font-weight: 600;
+    border-radius: 3px;
     transition: all 0.3s ease;
-    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
     text-transform: uppercase;
+    margin-left: 5px;
+    outline: none !important;
 }
 
 .lang-btn:hover {
-    background: rgba(255, 255, 255, 0.15);
-    border-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(201, 114, 52, 0.1) !important;
+    border-color: #c97234 !important;
+    color: #c97234 !important;
     transform: translateY(-2px);
+    box-shadow: 0 3px 10px rgba(201, 114, 52, 0.2);
 }
 
 .lang-btn.active {
-    background: #c97234;
-    border-color: #c97234;
-    color: #fff;
+    background-color: #c97234 !important;
+    color: #fff !important;
+    border-color: #c97234 !important;
+    box-shadow: 0 5px 15px rgba(201, 114, 52, 0.3);
+}
+
+.lang-btn:focus {
+    outline: none !important;
+    box-shadow: 0 5px 15px rgba(201, 114, 52, 0.3);
 }
 
 /* Responsive для мобильных */
@@ -139,5 +228,18 @@
         margin: 15px auto;
         justify-content: center;
         width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .language-switcher {
+        margin-top: 10px;
+        padding-top: 0;
+        display: block;
+        text-align: center;
+    }
+
+    .lang-btn {
+        margin: 0 5px;
     }
 }

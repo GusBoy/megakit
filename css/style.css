@@ -1404,4 +1404,14 @@ h3.quote::before {
     padding-bottom: 0px;
   }
 }
+
+/* Prevent language flash on page load */
+.lang-loading {
+  opacity: 0 !important;
+  transition: opacity 0.2s ease-in;
+}
+
+.lang-ready {
+  opacity: 1 !important;
+}
 /*# sourceMappingURL=style.css.map */

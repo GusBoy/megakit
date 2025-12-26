@@ -12,7 +12,7 @@ const headerHTML = `
         <div class="col-lg-12">
           <nav class="navbar navbar-expand-lg px-0 py-4">
             <a class="navbar-brand" href="index.html">
-              <img src="images/logo-text.svg" alt="Mandril" style="max-height: 50px;" onerror="this.onerror=null; this.src='images/logo.png';">
+              <img src="images/logo-text.svg" alt="Mandril" class="logo-img" onerror="this.onerror=null; this.src='images/logo-mandril.png';">
             </a>
       
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample09"
@@ -36,11 +36,11 @@ const headerHTML = `
                 </li>
               </ul>
               <div class="language-switcher">
-                <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')" aria-label="English">
-                  EN
-                </button>
                 <button class="lang-btn" data-lang="ro" onclick="changeLanguage('ro')" aria-label="Romanian">
                   RO
+                </button>
+                <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')" aria-label="English">
+                  EN
                 </button>
               </div>
             </div>
@@ -147,14 +147,40 @@ document.addEventListener('DOMContentLoaded', function() {
   // Insert header
   const headerPlaceholder = document.getElementById('header-placeholder');
   if (headerPlaceholder) {
+    // Hide header initially to prevent flash
+    headerPlaceholder.classList.add('lang-loading');
     headerPlaceholder.innerHTML = headerHTML;
     setActivePage();
+
+    // Apply saved language immediately after header injection
+    const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+    if (typeof applyLanguageToHeader === 'function') {
+      applyLanguageToHeader(savedLang);
+    }
+
+    // Show header with smooth transition
+    setTimeout(() => {
+      headerPlaceholder.classList.remove('lang-loading');
+      headerPlaceholder.classList.add('lang-ready');
+    }, 10);
   }
-  
+
   // Insert footer
   const footerPlaceholder = document.getElementById('footer-placeholder');
   if (footerPlaceholder) {
+    footerPlaceholder.classList.add('lang-loading');
     footerPlaceholder.innerHTML = footerHTML;
+
+    // Apply language to footer
+    const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+    if (typeof applyLanguageToFooter === 'function') {
+      applyLanguageToFooter(savedLang);
+    }
+
+    setTimeout(() => {
+      footerPlaceholder.classList.remove('lang-loading');
+      footerPlaceholder.classList.add('lang-ready');
+    }, 10);
   }
 });
 

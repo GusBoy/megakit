@@ -356,6 +356,48 @@ function changeLanguage(lang) {
     console.log('✅ Language switched to:', lang);
 }
 
+// Helper function to apply language to specific container
+function applyLanguageToContainer(container, lang) {
+    if (!translations[lang]) return;
+
+    container.querySelectorAll('[data-lang]').forEach(element => {
+        const key = element.getAttribute('data-lang');
+        if (translations[lang][key]) {
+            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                element.placeholder = translations[lang][key];
+            } else if (element.tagName === 'BUTTON' || element.tagName === 'A') {
+                const childNodes = Array.from(element.childNodes);
+                const hasOnlyText = childNodes.every(node => node.nodeType === Node.TEXT_NODE || node.nodeName === 'I');
+                if (hasOnlyText) {
+                    const icons = element.querySelectorAll('i');
+                    element.textContent = translations[lang][key];
+                    icons.forEach(icon => element.appendChild(icon));
+                } else {
+                    element.textContent = translations[lang][key];
+                }
+            } else {
+                element.textContent = translations[lang][key];
+            }
+        }
+    });
+}
+
+// Apply language only to header
+function applyLanguageToHeader(lang) {
+    const header = document.getElementById('header-placeholder');
+    if (header) {
+        applyLanguageToContainer(header, lang);
+    }
+}
+
+// Apply language only to footer
+function applyLanguageToFooter(lang) {
+    const footer = document.getElementById('footer-placeholder');
+    if (footer) {
+        applyLanguageToContainer(footer, lang);
+    }
+}
+
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
     console.log('📄 language.js initialized');
@@ -363,10 +405,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Load saved language or default to English
     const savedLang = localStorage.getItem('preferredLanguage') || 'en';
 
-    // Apply the language after a small delay to ensure DOM is fully loaded
-    setTimeout(() => {
-        changeLanguage(savedLang);
-    }, 100);
+    // Apply language immediately - no delay needed
+    changeLanguage(savedLang);
 
     console.log('✅ Language loaded:', savedLang);
 });
