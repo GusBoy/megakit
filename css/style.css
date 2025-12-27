@@ -309,6 +309,8 @@ a:focus {
 }
 .page-title .block ul {
   animation: fadeInUp 1s ease 0.3s backwards;
+  border: none !important;
+  outline: none !important;
 }
 
 .page-wrapper {
