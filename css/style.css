@@ -227,6 +227,11 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
   background: #000;
 }
 
+/* Reduce overlay opacity only for page-title to make background image more visible */
+.page-title:before {
+  opacity: 0.2;
+}
+
 .overly-2, .latest-blog, .cta-block, .bg-counter {
   position: relative;
 }
@@ -295,7 +300,10 @@ a:focus {
 }
 
 .page-title {
-  padding: 100px 0;
+  padding: 220px 0;
+  min-height: 600px;
+  background-size: cover !important;
+  background-position: center 40% !important;
 }
 .page-title .block h1 {
   color: #fff;
