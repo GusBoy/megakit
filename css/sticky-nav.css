@@ -111,21 +111,22 @@
         border-top: 1px solid rgba(13, 74, 109, 0.1);
         margin-top: 10px;
         /* Performance optimizations */
-        will-change: transform, opacity;
+        will-change: auto;
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
         transform: translateZ(0);
         transition: none !important;
     }
 
-    /* Smooth transition override for Bootstrap */
+    /* Faster transition for mobile menu */
     .navbar-collapse.collapsing {
-        transition: height 0.25s ease !important;
+        transition: height 0.15s ease-out !important;
         overflow: hidden;
     }
 
     .navbar-collapse.show {
         transition: none !important;
+        display: block !important;
     }
 
     #navbar .nav-link {

@@ -156,8 +156,6 @@ document.addEventListener('DOMContentLoaded', function() {
   // Insert header
   const headerPlaceholder = document.getElementById('header-placeholder');
   if (headerPlaceholder) {
-    // Hide header initially to prevent flash
-    headerPlaceholder.classList.add('lang-loading');
     headerPlaceholder.innerHTML = headerHTML;
     setActivePage();
 
@@ -166,18 +164,11 @@ document.addEventListener('DOMContentLoaded', function() {
     if (typeof applyLanguageToHeader === 'function') {
       applyLanguageToHeader(savedLang);
     }
-
-    // Show header with smooth transition
-    setTimeout(() => {
-      headerPlaceholder.classList.remove('lang-loading');
-      headerPlaceholder.classList.add('lang-ready');
-    }, 10);
   }
 
   // Insert footer
   const footerPlaceholder = document.getElementById('footer-placeholder');
   if (footerPlaceholder) {
-    footerPlaceholder.classList.add('lang-loading');
     footerPlaceholder.innerHTML = footerHTML;
 
     // Apply language to footer
@@ -185,11 +176,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (typeof applyLanguageToFooter === 'function') {
       applyLanguageToFooter(savedLang);
     }
-
-    setTimeout(() => {
-      footerPlaceholder.classList.remove('lang-loading');
-      footerPlaceholder.classList.add('lang-ready');
-    }, 10);
   }
 });
 

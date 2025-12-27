@@ -22,6 +22,9 @@
   <meta name="author" content="Mandril">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 
+  <!-- Preload Critical Resources -->
+  <link rel="preload" href="images/bg/home-1.jpg" as="image">
+
   <!-- Canonical URL -->
   <link rel="canonical" href="https://mandril.md/">
 
@@ -65,6 +68,9 @@
   <link rel="stylesheet" href="css/sticky-nav.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/scroll-animations.css">
+
+  <!-- Performance Fixes -->
+  <link rel="stylesheet" href="css/performance-fixes.css">
 
   <!--Favicon-->
   <link rel="icon" href="images/favicon.png" type="image/x-icon">
@@ -416,6 +422,9 @@ Essential Scripts
 <!-- Google Map -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU" defer></script>
 <script src="plugins/google-map/map.js" defer></script>
+
+<!-- Background Image Loader (must load BEFORE other scripts) -->
+<script src="js/bg-loader.js"></script>
 
 <script src="js/script.js"></script>
 

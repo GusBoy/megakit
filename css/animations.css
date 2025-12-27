@@ -7,10 +7,12 @@
 .animate-on-scroll {
     opacity: 0;
     transition: opacity 0.3s ease;
+    will-change: opacity, transform;
 }
 
 .animate-on-scroll.animated {
     opacity: 1;
+    will-change: auto;
 }
 
 /* ========================================
@@ -90,7 +92,7 @@
    ======================================== */
 
 .fade-in-up {
-    animation: fadeInUp 0.8s ease-out forwards;
+    animation: fadeInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .fade-in-up.animated {
@@ -98,7 +100,7 @@
 }
 
 .slide-in-left {
-    animation: slideInLeft 0.8s ease-out forwards;
+    animation: slideInLeft 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .slide-in-left.animated {
@@ -106,7 +108,7 @@
 }
 
 .slide-in-right {
-    animation: slideInRight 0.8s ease-out forwards;
+    animation: slideInRight 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .slide-in-right.animated {
@@ -114,7 +116,7 @@
 }
 
 .scale-in {
-    animation: scaleIn 0.6s ease-out forwards;
+    animation: scaleIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .scale-in.animated {

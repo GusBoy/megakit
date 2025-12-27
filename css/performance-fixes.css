@@ -1,0 +1,205 @@
+/**
+ * Performance Fixes & FOUC Prevention
+ * Fixes for mobile menu lag and text appearing before background
+ */
+
+/* ========================================
+   PREVENT FLASH OF UNSTYLED CONTENT (FOUC)
+   ======================================== */
+
+/* Ensure smooth page loading */
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Hide content until fully loaded */
+#header-placeholder:empty,
+#footer-placeholder:empty {
+    min-height: 80px;
+    background: #ffffff;
+}
+
+/* Ensure slider section doesn't show text before background loads */
+.slider {
+    position: relative;
+    background-color: #1a1a2e !important; /* Fallback color - темный синий */
+    min-height: 500px;
+}
+
+/* Hide slider content initially until background loads */
+.slider .block {
+    opacity: 0 !important;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                visibility 0s 0.6s;
+}
+
+/* Show content when slider is ready */
+.slider.bg-loaded .block {
+    opacity: 1 !important;
+    visibility: visible;
+    transform: translateY(0);
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                visibility 0s 0s;
+}
+
+/* Smooth background appearance */
+.slider {
+    background-color: #1a1a2e;
+    transition: background-image 0.3s ease-in-out;
+}
+
+/* Gradient overlay while loading */
+.slider::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(13, 74, 109, 0.8), rgba(26, 26, 46, 0.9));
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.slider.bg-loading::after {
+    opacity: 1;
+}
+
+.slider .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* ========================================
+   MOBILE MENU OPTIMIZATIONS
+   ======================================== */
+
+/* Force GPU acceleration for smoother animations */
+.navbar-collapse {
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+}
+
+/* Optimize hamburger menu button */
+.navbar-toggler {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.navbar-toggler:active {
+    transform: scale(0.95);
+}
+
+/* Faster menu transitions on mobile */
+@media (max-width: 992px) {
+    .navbar-collapse.collapsing {
+        position: relative;
+        overflow: hidden;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+    }
+
+    /* Prevent layout shift during collapse */
+    .navbar-collapse {
+        overflow-x: hidden;
+    }
+}
+
+/* ========================================
+   GENERAL PERFORMANCE OPTIMIZATIONS
+   ======================================== */
+
+/* Enable hardware acceleration for animated elements */
+.animate-on-scroll,
+.slider,
+.navigation,
+.navbar-collapse {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    perspective: 1000;
+}
+
+/* Optimize images for faster rendering */
+img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* ========================================
+   LOADING STATE OPTIMIZATION
+   ======================================== */
+
+/* Ensure smooth page load */
+body {
+    opacity: 0;
+    animation: fadeInBody 0.3s ease-out forwards;
+}
+
+@keyframes fadeInBody {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Prevent content jumping during font load */
+body {
+    font-display: swap;
+}
+
+/* ========================================
+   TOUCH DEVICE OPTIMIZATIONS
+   ======================================== */
+
+/* Improve touch responsiveness */
+a, button, input, select, textarea {
+    touch-action: manipulation;
+}
+
+/* Remove tap highlight on mobile */
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Smooth scrolling on iOS */
+body {
+    -webkit-overflow-scrolling: touch;
+}
+
+/* ========================================
+   CRITICAL CSS FOR ABOVE-THE-FOLD CONTENT
+   ======================================== */
+
+/* Ensure navigation is visible immediately */
+.navigation {
+    contain: layout style;
+}
+
+/* Optimize hero section rendering */
+.slider {
+    contain: layout style paint;
+}

@@ -7,19 +7,19 @@
  // GITHUB: https://github.com/themefisher/
 -->
 
-<html lang="zxx">
+<html lang="en">
 <head>
 
   <!-- ** Basic Page Needs ** -->
   <meta charset="utf-8">
-  <title>Megakit | HTML5 Agency Template</title>
+  <title>Contact Us | Mandril International Trade</title>
 
   <!-- ** Mobile Specific Metas ** -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Agency HTML Template">
+  <meta name="description" content="Get in touch with Mandril for professional international trade solutions. Contact us for import-export services in industrial and agricultural products.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="author" content="Themefisher">
-  <meta name="generator" content="Themefisher Html5 Agency Template v1.0">
+  <meta name="author" content="Mandril">
+  <meta name="robots" content="index, follow">
 
   <!-- bootstrap.min css -->
   <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
@@ -33,7 +33,7 @@
 
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
-  
+
   <!-- Color Scheme CSS Files -->
   <link rel="stylesheet" href="css/hero-colors.css">
   <link rel="stylesheet" href="css/logo-colors.css">
@@ -41,6 +41,12 @@
   <link rel="stylesheet" href="css/sticky-nav.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/scroll-animations.css">
+
+  <!-- Contact Form Styles -->
+  <link rel="stylesheet" href="css/contact-form.css">
+
+  <!-- Performance Fixes -->
+  <link rel="stylesheet" href="css/performance-fixes.css">
 
   <!--Favicon-->
   <link rel="icon" href="images/favicon.png" type="image/x-icon">
@@ -70,18 +76,43 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-6 col-md-12 col-sm-12">
-				<form id="contact-form" class="contact__form animate-on-scroll fade-in-up" method="post" action="index.html">
+				<form id="contact-form" class="contact__form animate-on-scroll fade-in-up" method="POST" action="https://api.web3forms.com/submit">
+					<!-- Web3Forms Access Key - Replace with your own key from https://web3forms.com -->
+					<input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+
+					<!-- Subject customization -->
+					<input type="hidden" name="subject" value="New Contact Form Submission from Mandril Website">
+
+					<!-- Redirect URL after successful submission -->
+					<input type="hidden" name="redirect" value="https://mandril.md/contact.html?success=true">
+
+					<!-- Honeypot Spam Protection -->
+					<input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
 					<h3 class="text-md mb-4" data-lang="contact.form.title">Contact Form</h3>
+
+					<!-- Success/Error Messages -->
+					<div id="form-message" class="alert" style="display:none;"></div>
+
 					<div class="form-group">
 						<input name="name" type="text" class="form-control" data-lang="contact.form.name" placeholder="Your Name" required>
 					</div>
 					<div class="form-group">
 						<input name="email" type="email" class="form-control" data-lang="contact.form.email" placeholder="Email Address" required>
 					</div>
-					<div class="form-group-2 mb-4">
-						<textarea name="message" class="form-control" rows="4" data-lang="contact.form.message" placeholder="Your Message" required></textarea>
+					<div class="form-group">
+						<input name="phone" type="tel" class="form-control" placeholder="Phone Number (optional)">
 					</div>
-					<button class="btn btn-main" name="submit" type="submit" data-lang="contact.form.submit">Send Message</button>
+					<div class="form-group">
+						<input name="company" type="text" class="form-control" placeholder="Company Name (optional)">
+					</div>
+					<div class="form-group-2 mb-4">
+						<textarea name="message" class="form-control" rows="6" data-lang="contact.form.message" placeholder="Your Message" required></textarea>
+					</div>
+					<button class="btn btn-main" id="submit-btn" name="submit" type="submit" data-lang="contact.form.submit">
+						<span class="btn-text">Send Message</span>
+						<span class="btn-loading" style="display:none;">Sending...</span>
+					</button>
 				</form>
 			</div>
 
@@ -143,6 +174,9 @@ Essential Scripts
 <script src="plugins/counterup/jquery.counterup.min.js"></script>
 
 <script src="js/script.js"></script>
+
+<!-- Contact Form Handler -->
+<script src="js/contact-form.js"></script>
 
 </body>
 
