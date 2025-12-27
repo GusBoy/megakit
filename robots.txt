@@ -1,0 +1,16 @@
+# robots.txt for Mandril International Trade
+# Allow all search engines to index the site
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://mandril.md/sitemap.xml
+
+# Crawl-delay (optional, helps prevent server overload)
+Crawl-delay: 1
+
+# Block access to specific directories (if needed)
+Disallow: /plugins/
+Disallow: /js/
+Disallow: /css/
