@@ -140,9 +140,9 @@ body {
 
 /* Logo in navbar - colored and sized */
 .navbar-brand .logo-img {
-    height: 55px !important;
+    height: 80px !important;
     width: auto !important;
-    max-width: 280px !important;
+    max-width: 400px !important;
     display: block !important;
     transition: all 0.3s ease;
     filter: none !important;

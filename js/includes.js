@@ -12,7 +12,7 @@ const headerHTML = `
         <div class="col-lg-12">
           <nav class="navbar navbar-expand-lg px-0 py-4">
             <a class="navbar-brand" href="index.html">
-              <img src="images/logo-text.svg" alt="Mandril" class="logo-img" onerror="this.onerror=null; this.src='images/logo-mandril.png';">
+              <img src="images/logo-mandril-new.png" alt="Mandril" class="logo-img">
             </a>
       
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample09"
