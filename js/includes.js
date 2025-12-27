@@ -14,12 +14,21 @@ const headerHTML = `
             <a class="navbar-brand" href="index.html">
               <img src="images/logo-mandril-new.png" alt="Mandril" class="logo-img">
             </a>
-      
+
+            <div class="language-switcher language-switcher-mobile">
+              <button class="lang-btn" data-lang="ro" onclick="changeLanguage('ro')" aria-label="Romanian">
+                RO
+              </button>
+              <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')" aria-label="English">
+                EN
+              </button>
+            </div>
+
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample09"
               aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
               <span class="fa fa-bars"></span>
             </button>
-      
+
             <div class="collapse navbar-collapse text-center" id="navbarsExample09">
               <ul class="navbar-nav ml-auto">
                 <li class="nav-item" data-page="index">
@@ -35,7 +44,7 @@ const headerHTML = `
                   <a class="nav-link" href="contact.html" data-lang="nav.contact">CONTACT</a>
                 </li>
               </ul>
-              <div class="language-switcher">
+              <div class="language-switcher language-switcher-desktop">
                 <button class="lang-btn" data-lang="ro" onclick="changeLanguage('ro')" aria-label="Romanian">
                   RO
                 </button>

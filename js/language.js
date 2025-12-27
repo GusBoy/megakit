@@ -358,14 +358,14 @@ function changeLanguage(lang, animate = true) {
         }
     });
 
-    // Update active language button
+    // Update active language button (both mobile and desktop versions)
     document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.classList.remove('active');
     });
-    const activeBtn = document.querySelector(`.lang-btn[data-lang="${lang}"]`);
-    if (activeBtn) {
-        activeBtn.classList.add('active');
-    }
+    // Add active class to all buttons with the selected language
+    document.querySelectorAll(`.lang-btn[data-lang="${lang}"]`).forEach(btn => {
+        btn.classList.add('active');
+    });
 
     console.log('✅ Language switched to:', lang);
 }
