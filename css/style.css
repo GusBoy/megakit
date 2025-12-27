@@ -584,7 +584,7 @@ ul.dropdown-menu li {
   background: url("../images/bg/home-1.jpg") no-repeat;
   background-size: cover;
   background-position: 10% 0%;
-  padding: 200px 0;
+  padding: 120px 0;
   position: relative;
 }
 @media (max-width: 768px) {
@@ -651,6 +651,7 @@ ul.dropdown-menu li {
   transform: scale(1.08);
 }
 
+
 /* ===========================================
    ABOUT SECTION ANIMATION - SLIDE FROM RIGHT
    =========================================== */
@@ -713,7 +714,7 @@ ul.dropdown-menu li {
 }
 
 .about-content {
-  padding: 20px 0px 0px 0px;
+  padding: 0px;
 }
 .about-content h4 {
   font-weight: 600;
